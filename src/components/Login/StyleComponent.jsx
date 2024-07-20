@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 const color = "#46778C";
 const inputFieldColor = "#8CC6D4";
+import {media} from "../../utils/breakDownSize.js"
 
 const LoginContainer = styled.div`
     width: 100%;
@@ -9,10 +10,7 @@ const LoginContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-
-    @media screen and (max-width: 300px) {
-        align-items: center;
-    }
+    padding: 0 1rem;
 `
 
 const LoginContent = styled.div`
@@ -24,19 +22,24 @@ const LoginContent = styled.div`
     display: flex;
     outline: 1px solid;
 
-    @media screen and (max-width: 300px) {
-        max-width: 100%;
-        outline: none;
+    ${media.sm} {
+        width: 100%;
+        //outline: ;
+    }
+
+    ${media.md} {
+        width: auto;
+    }
+
+    ${media.lg} {
+		
     }
 `
 
 const LoginImageContainer = styled.div`
     min-height: 100%;
     width: 100%;
-
-    @media screen and (max-width: 300px) {
-        display: none;
-    }
+    overflow: hidden;
 
     div {
         width: 100%;
@@ -57,7 +60,6 @@ const LoginImageContainer = styled.div`
 
         h1 {
             display: flex;
-
             gap: 10px;
             font-size: 8rem;
             font-weight: 700;
@@ -68,7 +70,46 @@ const LoginImageContainer = styled.div`
         }
     }
 
+    ${media.sm} {
+        display: none;
 
+        div {
+            img {
+                display: none;
+            }
+
+            h1 {
+                display: none;
+            }
+        }
+    }
+
+    ${media.md} {
+        width: 10rem;
+
+        div {
+            h1 {
+                display: none;
+                font-size: 4rem;
+                font-weight: 300;
+            }
+        }
+    }
+
+
+    ${media.lg} {
+        width: 20rem;
+
+        div {
+            width: 100%;
+
+            h1 {
+                display: none;
+                font-size: 6rem;
+                font-weight: 500;
+            }
+        }
+    }
 `
 
 const LoginArea = styled.div`
@@ -78,10 +119,6 @@ const LoginArea = styled.div`
     //color: #8DC6D6;
     color: ${color};
 
-    p {
-
-    }
-
     h1 {
         color: black;
         text-transform: uppercase;
@@ -90,8 +127,18 @@ const LoginArea = styled.div`
         width: 100%;
     }
 
-    @media screen and (max-width: 300px) {
+    ${media.lg} {
+        width: 30rem;
+    }
+
+    ${media.md} {
+        width: 20rem;
+    }
+
+    ${media.sm} {
+        width: 100%;
         padding: 0;
+
         p {
             font-size: 0.8rem;
         }
@@ -102,15 +149,18 @@ const Form = styled.form`
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    width: 100%;
 `
 
 const FormGroup = styled.div`
     display: flex;
     flex-direction: column;
 
-    @media screen and (max-width: 300px) {
+    ${media.sm} {
         padding: 0 10px;
         font-size: 0.8rem;
+        width: 100%;
+
         input {
             height: 20px;
             font-size: 0.8rem;
@@ -120,7 +170,6 @@ const FormGroup = styled.div`
             font-size: 0.8rem;
         }
     }
-
 
     p {
         color: #455058;
@@ -141,18 +190,18 @@ const ButtonSignIn = styled.button`
     width: 100%;
     outline: none;
     padding: 10px;
-    //border: 1px solid ${inputFieldColor};
+        //border: 1px solid ${inputFieldColor};
     border: none;
     background-color: black;
     color: white;
 `
 
 export {
-    LoginContainer,
-    LoginContent,
-    LoginArea,
-    LoginImageContainer,
-    Form,
-    FormGroup,
-    ButtonSignIn
+	LoginContainer,
+	LoginContent,
+	LoginArea,
+	LoginImageContainer,
+	Form,
+	FormGroup,
+	ButtonSignIn
 };

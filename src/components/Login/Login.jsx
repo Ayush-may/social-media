@@ -140,7 +140,6 @@ function LoginComponent({setType}) {
 			</LoginArea>
 
 			<LoginImageContainer>
-
 				<div>
 					<h1>
 						{/*Welcome back!*/}
