@@ -1,0 +1,6 @@
+@echo off
+echo Stopping and removing existing containers...
+docker-compose down
+
+echo Rebuilding images and starting containers...
+docker-compose up --build

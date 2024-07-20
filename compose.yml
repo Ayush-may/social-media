@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+    react:
+        container_name: react_app
+        environment:
+#            - WDS_SOCKET_HOST=127.0.0.1
+            - CHOKIDAR_USEPOLLING=true
+            - WATCHPACK_POLLING=true
+        build:
+            context: .
+            dockerfile: Dockerfile
+        ports:
+            - "5173:5173"
+        volumes:
+            - .:/app
+            - /app/node_modules
+        develop:
+            watch:
+                - action: sync
+                  path: /src
+                  target: /app
+        command: npm run dev
