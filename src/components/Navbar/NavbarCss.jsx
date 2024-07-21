@@ -21,23 +21,35 @@ const NavbarContainer = styled.nav`
 
 const NavbarLogo = styled.div`
     user-select: none;
+
     h1 {
         font-weight: bold;
         padding: 0;
         margin: 0;
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+    }
+
+    ${media.md} {
+        h1 {
+            font-weight: 600;
+        }
     }
 `
 
 const NavbarItemContainer = styled.div`
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 1rem;
 
     a {
         text-decoration: none;
         font-size: 1.2rem;
         padding: 0 10px;
-
+	    
         &.login {
             color: white;
             background: black;
@@ -45,10 +57,10 @@ const NavbarItemContainer = styled.div`
         }
 
         &.loginActive {
-            color: black;
+            color: red;
             background: white;
-            outline: 1px solid;
-            border-bottom: 3px solid;
+            outline: 1px solid red;
+            border-bottom: 3px solid red;
         }
 
         &::selection {
@@ -57,6 +69,10 @@ const NavbarItemContainer = styled.div`
 
         &::-moz-selection {
             color: red;
+        }
+
+        ${media.md} {
+            font-size: 0.8rem;
         }
 
     }
@@ -68,6 +84,12 @@ const NavbarItemContainer = styled.div`
     ${media.xl} {
         gap: 1.5rem;
     }
+`
+
+const NavLinkGroup = styled.div`
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
 
     ${media.lg} {
         display: none;
@@ -77,4 +99,5 @@ export {
 	NavbarContainer,
 	NavbarLogo,
 	NavbarItemContainer,
+	NavLinkGroup
 }
