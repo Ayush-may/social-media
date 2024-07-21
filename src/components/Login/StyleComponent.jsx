@@ -21,18 +21,17 @@ const LoginContent = styled.div`
     //height: 27.5rem;
     display: flex;
     outline: 1px solid;
+    background-color: white;
 
     ${media.sm} {
         width: 100%;
-        //outline: ;
     }
 
     ${media.md} {
-        width: auto;
     }
 
     ${media.lg} {
-		
+        width: 100%;
     }
 `
 
@@ -52,7 +51,7 @@ const LoginImageContainer = styled.div`
         img {
             position: absolute;
             inset: 0;
-            z-index: -1;
+            z-index: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -67,6 +66,7 @@ const LoginImageContainer = styled.div`
             text-wrap: wrap;
             padding: 0 2rem;
             text-transform: capitalize;
+        	z-index: 1;
         }
     }
 
@@ -98,7 +98,7 @@ const LoginImageContainer = styled.div`
 
 
     ${media.lg} {
-        width: 20rem;
+        width: ;
 
         div {
             width: 100%;
@@ -109,6 +109,11 @@ const LoginImageContainer = styled.div`
                 font-weight: 500;
             }
         }
+    }
+
+    ${media.xl} {
+        width: 70%;
+
     }
 `
 
@@ -127,21 +132,29 @@ const LoginArea = styled.div`
         width: 100%;
     }
 
-    ${media.lg} {
-        width: 30rem;
-    }
-
-    ${media.md} {
-        width: 20rem;
+    p:hover {
+        color: blue;
     }
 
     ${media.sm} {
-        width: 100%;
-        padding: 0;
+        max-width: 100%;
+        padding: 2rem 1rem;
 
         p {
             font-size: 0.8rem;
         }
+    }
+
+    ${media.md} {
+        max-width: 20rem;
+    }
+
+    ${media.lg} {
+        max-width: 30rem;
+    }
+
+    ${media.xl} {
+        max-width: 40rem;
     }
 `
 const Form = styled.form`
@@ -171,6 +184,10 @@ const FormGroup = styled.div`
         }
     }
 
+    ${media.md} {
+	    
+    }
+
     p {
         color: #455058;
     }
@@ -190,10 +207,13 @@ const ButtonSignIn = styled.button`
     width: 100%;
     outline: none;
     padding: 10px;
-        //border: 1px solid ${inputFieldColor};
     border: none;
     background-color: black;
     color: white;
+
+    &:hover {
+        background-color: rgba(0 0 0 / 0.8);
+    }
 `
 
 export {

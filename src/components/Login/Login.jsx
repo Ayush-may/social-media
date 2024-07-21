@@ -6,6 +6,7 @@ import {
 import {Link} from "react-router-dom";
 import {CiLogin} from "react-icons/ci";
 import {useState} from "react";
+import Navbar from "../Navbar/Navbar.jsx";
 
 function SwitchComponent({type, setType}) {
 	function handler() {
@@ -34,7 +35,8 @@ function Login() {
 	const [type, setType] = useState("LOGIN");
 
 	return (<>
-		<LoginContainer>
+		<Navbar/>
+		<LoginContainer className={"pattern-dots-md"}>
 			<LoginContent>
 				<SwitchComponent type={type} setType={setType}/>
 			</LoginContent>
