@@ -24,11 +24,7 @@ function SwitchComponent({type, setType}) {
 		}
 	}
 
-	return (
-		<>
-			{handler()}
-		</>
-	)
+	return handler()
 }
 
 // main component
@@ -81,6 +77,7 @@ function SignUpComponent({setType}) {
 	/*
 
 	TODO:WORK HERE
+	*/
 
 	function validateUsername(event) {
 		const usernamePattern = /^[A-Z][a-z]*[0-9]+$/;
@@ -93,7 +90,6 @@ function SignUpComponent({setType}) {
 			setErrors("user", {type: "manual", message: ""});
 		}
 	}
-	*/
 
 
 	return (

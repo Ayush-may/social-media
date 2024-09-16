@@ -1,6 +1,7 @@
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import Login from "./components/Login/Login.jsx";
 import Home from "./pages/Home/Home.jsx";
+import Feed from "./pages/feed/Feed.jsx";
 
 const router = createBrowserRouter([
 	{
@@ -11,6 +12,10 @@ const router = createBrowserRouter([
 		path: "/login",
 		element: <Login/>
 	},
+	{
+		path:"/feed",
+		element: <Feed/>
+	}
 ]);
 
 export default function Routes() {
